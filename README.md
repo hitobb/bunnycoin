@@ -35,7 +35,7 @@ P2P 48445
 
 Active node list is /release/bunnycoin.conf
 
-## Difference between original(1.0.0) and this branch(1.0.0a)
+## Difference between original(1.0.0) and this branch(1.0.1)
 
  Support     : ubuntu 16.04 or later
 
@@ -53,7 +53,7 @@ The default BerkeleyDB on Ubuntu 16.04 is Ver 5.1.
 BerkeleyDB 4.8 and 5.1 are incompatible.
 So,you must install BerkeleyDB 4.8 manually.
 
-## How to install 1.0.0a to ubuntu 16.04
+## How to install 1.0.1 to ubuntu 16.04
 
 ### Build requirements:
 

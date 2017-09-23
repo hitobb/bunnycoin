@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.0a
+!define VERSION 1.0.1
 !define COMPANY "Bunnycoin project"
 !define URL http://www.bunnycoin.org/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile bunnycoin-1.0.0a-win32-setup.exe
+OutFile bunnycoin-1.0.1-win32-setup.exe
 InstallDir $PROGRAMFILES\Bunnycoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 1.0.0a
+VIProductVersion 1.0.1
 VIAddVersionKey ProductName Bunnycoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
