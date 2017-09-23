@@ -1,4 +1,4 @@
-# Bunnycoin [BUNN ,BUN] 
+# Bunnycoin [BUNN ,BUN]
 
 Bunnycoin is a decentralized peer-to-peer cryptocurrency based upon Bitcoin (inspired by Dogecoin), designed to spread Love, Peace, Happiness and Economic Freedom Worldwide.
 
@@ -30,11 +30,13 @@ Random block rewards to encourage individuals to participate in the mining proce
 
 ### Ports
 RPC 48444
+
 P2P 48445
 
 ### Difference between original(1.0.0) and this branch(1.0.0a)
 
 Support     : ubuntu 16.04 or later
+
 unsupported : ubuntu 14.04/12.04
 
 - Versions used in this release:
@@ -45,7 +47,43 @@ unsupported : ubuntu 14.04/12.04
 -  miniupnpc     1.9
 
 The default BerkeleyDB on Ubuntu 16.04 is Ver 5.1.
+
 BerkeleyDB 4.8 and 5.1 are incompatible.
 So,you must install BerkeleyDB 4.8 manually.
 
-More informaiton is /doc/build-unix.md
+### How to install 1.0.0a to ubuntu 16.04
+
+Build requirements:
+
+	sudo apt-get install build-essential
+  sudo apt-get install libssl-dev
+  sudo apt-get install libboost-all-dev
+
+ db4.8 packages are available [here](https://launchpad.net/~bitcoin/+archive/bitcoin).
+
+ Ubuntu precise has packages for libdb5.1-dev and libdb5.1++-dev,
+ but using these will break binary wallet compatibility, and is not recommended.
+
+  sudo apt-get install libdb4.8-dev
+  sudo apt-get install libdb4.8++-dev
+
+  Optional:
+
+  sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
+
+Berkeley DB:
+You need Berkeley DB 4.8.  If you have to build Berkeley DB yourself:
+
+  wget http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
+  tar zxvf db-4.8.30.tar.gz
+  cd db-4.8.30.tar/build_unix/    
+  ../dist/configure --prefix=/usr/local/BerkeleyDB.4.8 --enable-compat185 --enable-cxx
+  sudo make
+  sudo make install
+
+To Build
+
+  cd src/
+  make -f makefile.unix		# Headless bunnycoin
+
+See readme-qt.rst for instructions on building Bunnycoin-Qt, the graphical user interface.
