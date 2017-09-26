@@ -78,7 +78,7 @@ You need Berkeley DB 4.8.  If you have to build Berkeley DB yourself:
 
 	wget http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
 	tar zxvf db-4.8.30.tar.gz
-	cd db-4.8.30.tar/build_unix/    
+	cd db-4.8.30/build_unix/    
  	../dist/configure --prefix=/usr/local/BerkeleyDB.4.8 --enable-compat185 --enable-cxx
 	sudo make
 	sudo make install
