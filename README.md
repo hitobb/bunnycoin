@@ -70,7 +70,7 @@ So,you must install BerkeleyDB 4.8 manually.
 	sudo apt-get install libdb4.8++-dev
 
 ### Optional:
-  
+
 	sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
 
 ### Berkeley DB:

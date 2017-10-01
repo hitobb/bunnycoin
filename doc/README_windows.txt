@@ -1,4 +1,4 @@
-Dogecoin 1.5.0
+bunnycoin 1.5.0
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
@@ -27,4 +27,3 @@ bunnycoin-Qt is the original bunnycoin client and it builds the backbone of the 
 However, it downloads and stores the entire history of bunnycoin transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
-
