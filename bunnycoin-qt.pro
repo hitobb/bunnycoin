@@ -461,7 +461,7 @@ LIBS += -lssl -lcrypto
 }
 
 win32: {
-    LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32
+    LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32 -lpthread
 }
 
 contains(RELEASE, 1) {
