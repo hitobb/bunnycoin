@@ -41,9 +41,7 @@ Other Pages
 - [OSX Build Notes](build-osx.md)                                                                                                                                          
 - [Windows Build Notes](build-msw.md)  
 
-
-
-- [Windows Cross-Compile Build Notes](build-mxe.md)                                                                                                                                      
+- [Linux Cross-Compile Build Notes](build-mxe.md)                                                                                                                                      
 - [Coding Guidelines](coding.md)                                                                                                                                           
 - [Release Process](release-process.md)                                                                                                                                    
 - [Release Notes](release-notes.md)                                                                                                                                        
