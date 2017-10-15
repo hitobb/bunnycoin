@@ -1,4 +1,4 @@
-bunnycoin 0.8.x BETA
+bunnycoin 1.0.1
 ====================
 
 Copyright (c) 2009-2013 Bitcoin Developers
@@ -39,7 +39,9 @@ Other Pages
 ---------------------                                                                                                                                                      
 - [Unix Build Notes](build-unix.md)                                                                                                                                        
 - [OSX Build Notes](build-osx.md)                                                                                                                                          
-- [Windows Build Notes](build-msw.md)                                                                                                                                      
+- [Windows Build Notes](build-msw.md)  
+
+- [Linux Cross-Compile Build Notes](build-mxe.md)                                                                                                                                      
 - [Coding Guidelines](coding.md)                                                                                                                                           
 - [Release Process](release-process.md)                                                                                                                                    
 - [Release Notes](release-notes.md)                                                                                                                                        
