@@ -13,7 +13,7 @@ Dependencies
 Libraries you need to download separately and build:
 
 	MXE(M cross evironment)           /mnt/mxe          http://mxe.cc
-	Berkeley DB     /mnt/db-5.3.28          http://download.oracle.com/berkeley-db/db-5.3.28.tar.gz
+	Berkeley DB     /mnt/db-4.8.30          http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
 	miniupnpc       /mnt/miniupnpc-1.6.20120509         http://miniupnp.free.fr/files/miniupnpc-1.6.20120509.tar.gz
 	OpenSSL         you build with windows        http://www.openssl.org/source/
 
@@ -27,7 +27,7 @@ Their licenses:
 Versions used in this release:
 
 	MXE          build-2017-02-11
-	Berkeley DB  5.3.28
+	Berkeley DB  4.8.30.NC
 	miniupnpc    1.6
 	OpenSSL      1.0.1c
 
@@ -61,12 +61,12 @@ Compiling berkley db:
 Download and unpack berkeley db:
 
 	cd /mnt
-	wget http://download.oracle.com/berkeley-db/db-5.3.28.tar.gz
-	tar zxvf db-5.3.28.tar.gz
+	wget http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
+	tar zxvf db-4.8.30.tar.gz
 
 Make bash script for compilation:
 
-	cd /mnt/db-5.3.28
+	cd /mnt/db-4.8.30
 	touch compile-db.sh
 	chmod ugo+x compile-db.sh
 
