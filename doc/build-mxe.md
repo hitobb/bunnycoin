@@ -156,8 +156,13 @@ Content of compile-o.sh:
 	CC=$MXE_PATH/usr/bin/i686-w64-mingw32.static-gcc \
 	CFLAGS="-DSTATICLIB -I$MXE_PATH/usr/i686-w64-mingw32.static/include" \
 	LDFLAGS="-L$MXE_PATH/usr/i686-w64-mingw32.static/lib" \
+	./Configure no-zlib no-shared no-dso no-krb5 no-camellia no-capieng no-cast no-cms no-dtls1 no-gost no-gmp no-heartbeats no-idea no-jpake no-md2 no-mdc2 no-rc5 no-rdrand no-rfc3779 no-rsax no-sctp no-seed no-sha0 no-static_engine no-whirlpool no-rc2 no-rc4 no-ssl2 no-ssl3 mingw
+
 	make
 
+	mkdir -p $MXE_PATH/usr/i686-w64-mingw32/include/
+	mkdir -p $MXE_PATH/usr/i686-w64-mingw32/lib/
+	cp -r ./include/openssl $MXE_PATH/usr/i686-w64-mingw32/include/
 	cp *.a $MXE_PATH/usr/i686-w64-mingw32/lib
 
 Run:
