@@ -1,8 +1,8 @@
-Copyright (c) 2009-2013 Bitcoin Developers
-Distributed under the MIT/X11 software license, see the accompanying
-file COPYING or http://www.opensource.org/licenses/mit-license.php.
-This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](http://www.openssl.org/). This product includes
-cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
+Copyright (c) 2017 Bunnycoin Developers 
+
+Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](http://www.openssl.org/). This product includes cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
 
 
 CROSS-COMPILE BUILD NOTES(64bit Ubuntu 14.04)
@@ -15,7 +15,7 @@ Libraries you need to download separately and build:
 	MXE(M cross evironment)           /mnt/mxe          http://mxe.cc
 	Berkeley DB     /mnt/db-4.8.30          http://download.oracle.com/berkeley-db/db-4.8.30.tar.gz
 	miniupnpc       /mnt/miniupnpc-1.6.20120509         http://miniupnp.free.fr/files/miniupnpc-1.6.20120509.tar.gz
-	OpenSSL         you build with windows        http://www.openssl.org/source/
+	OpenSSL         /mnt/openssl-1.0.1c        http://www.openssl.org/source/openssl-1.0.1c.tar.gz
 
 Their licenses:
 
@@ -92,6 +92,10 @@ Content of compile-db.sh:
 
 	make install
 
+Run:
+
+	./compile-db.sh
+
 MiniUPnPc
 ---------
 UPnP support is optional, make with `USE_UPNP=` to disable it.
@@ -124,11 +128,41 @@ Content of compile-m.sh:
 	cp *.h $MXE_PATH/usr/i686-w64-mingw32.static/include/miniupnpc
 	cp libminiupnpc.a $MXE_PATH/usr/i686-w64-mingw32.static/lib
 
+Run:
+
+	./compile-m.sh
+
 OpenSSL
 -------
-Unfortunately OpenSSL libraries with mxe will happen compile error.
 
-You should manually build with Windows and copy libraries to '/mnt/mxe/i686-w64-mingw32/lib' .
+Compiling OpenSSL:
+Download and unpack OpenSSL:
+
+	cd /mnt
+	wget http://www.openssl.org/source/openssl-1.0.1c.tar.gz
+	tar zxvf openssl-1.0.1c.tar.gz
+
+Make bash script for compilation:
+
+	cd /mnt/openssl-1.0.1c
+	touch compile-o.sh
+	chmod ugo+x compile-o.sh
+
+Content of compile-o.sh:
+
+	#!/bin/bash
+	MXE_PATH=/mnt/mxe
+
+	CC=$MXE_PATH/usr/bin/i686-w64-mingw32.static-gcc \
+	CFLAGS="-DSTATICLIB -I$MXE_PATH/usr/i686-w64-mingw32.static/include" \
+	LDFLAGS="-L$MXE_PATH/usr/i686-w64-mingw32.static/lib" \
+	make
+
+	cp *.a $MXE_PATH/usr/i686-w64-mingw32/lib
+
+Run:
+
+	./compile-o.sh
 
 Bunnycoin
 -------
@@ -144,12 +178,6 @@ Compile:
 
 Bunnycoin-Qt
 -------
-Make bash script for compilation:
-
-	cd /mnt/bunnycoin
-	touch compile-bun.sh
-	chmod ugo+x compile-bun.sh
-
 Modified Boost header file (/mnt/mxe/usr/i686-w64-mingw32.static/include/boost/type_traits/detail/has_binary_operator.hpp):
 
 add to the top:
@@ -159,6 +187,12 @@ add to the top:
 add to the bottom:
 
 	#endif
+
+Make bash script for compilation:
+
+	cd /mnt/bunnycoin
+	touch compile-bun.sh
+	chmod ugo+x compile-bun.sh
 
 Content of compile-bun.sh:
 
@@ -180,3 +214,7 @@ Content of compile-bun.sh:
 		QMAKE_LRELEASE=/mnt/mxe/usr/i686-w64-mingw32.static/qt/bin/lrelease bunnycoin-qt.pro
 
 	make -f Makefile.Release
+
+Run:
+
+	./compile-bun.sh
