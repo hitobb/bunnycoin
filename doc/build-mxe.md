@@ -160,7 +160,9 @@ Content of compile-o.sh:
 
 	make
 
-	cp -r include/openssl $MXE_PATH/usr/i686-w64-mingw32/include/
+	mkdir -p $MXE_PATH/usr/i686-w64-mingw32/include/
+	mkdir -p $MXE_PATH/usr/i686-w64-mingw32/lib/
+	cp -r ./include/openssl $MXE_PATH/usr/i686-w64-mingw32/include/
 	cp *.a $MXE_PATH/usr/i686-w64-mingw32/lib
 
 Run:
